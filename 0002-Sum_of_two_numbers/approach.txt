@@ -1,0 +1,1 @@
+In this question, all we need to do is to create a new linked list(syntax given to make new node easily in question) and start storing solutions in it as we traverse through both linkedlist at the same time in a loop. This gives us our O(N) TC.
