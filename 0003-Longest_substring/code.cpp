@@ -1,26 +1,23 @@
 #include <iostream>
 #include <vector>
-#include <unordered_map>
 using namespace std;
 
-class Solution
+int main(int argc, char const *argv[])
 {
-    public:
-        vector<int> twoSum(vector<int> &nums, int target)
+    string str;
+    cin >> str;
+    vector<int> visited(256, -1);
+    int start = -1;
+    int maxLen = 0;
+    for (int i = 0; i < str.length(); ++i)
+    {
+        if (visited[str[i]] > start)
         {
-            unordered_map<int, int> m;
-            for(int i = 0; i<nums.size(); i++)
-            {
-                int complement = target - nums[i];
-                if(m.find(complement) != m.end())
-                {
-                    return {m[complement], i};
-                }
-                else
-                {
-                    m[nums[i]] = i;
-                }
-            }
-            return {};
+            start = visited[str[i]];
         }
-};
+        visited[str[i]] = i;
+        maxLen = max(maxLen, i - start);
+    }
+    cout << maxLen << endl;
+    return 0;
+}
