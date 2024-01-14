@@ -1,0 +1,3 @@
+To do this question, we can do it in o(n^2) TC by using nested loop and check if sum is equal to target for each pair of elements and give the result.
+
+But the optimised approach of doing this can be by using hash map having element and its index mapped. In this approach we will use the logic that while traversing the array we will check for each element the (target-current element) is present in the array or not.
