@@ -1,26 +1,25 @@
 #include <iostream>
-#include <vector>
-#include <unordered_map>
 using namespace std;
 
-class Solution
-{
-    public:
-        vector<int> twoSum(vector<int> &nums, int target)
-        {
-            unordered_map<int, int> m;
-            for(int i = 0; i<nums.size(); i++)
-            {
-                int complement = target - nums[i];
-                if(m.find(complement) != m.end())
-                {
-                    return {m[complement], i};
-                }
-                else
-                {
-                    m[nums[i]] = i;
+class Solution {
+public:
+    string convert(string s, int numRows) {
+        if (numRows == 1 || numRows >= s.length()) {
+            return s;
+        }
+        
+        string result;
+        int n = s.length();
+        int cycleLen = 2 * numRows - 2;
+        
+        for (int i = 0; i < numRows; i++) {
+            for (int j = 0; j + i < n; j += cycleLen) {
+                result.push_back(s[j + i]);
+                if (i != 0 && i != numRows - 1 && j + cycleLen - i < n) {
+                    result.push_back(s[j + cycleLen - i]);
                 }
             }
-            return {};
         }
+        return result;
+    }
 };
