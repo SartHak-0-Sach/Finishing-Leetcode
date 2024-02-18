@@ -1,1 +1,0 @@
-In this question, we can reverse the integer by using one while loop and add each digit to ans variable in reverse order, only issue was with the if condition to check if number is greater than INT_MAX or not rest everything was beginner stuff.
