@@ -1,0 +1,1 @@
+Solved question in O(N) TC and O(1) SC by finding simple math logic for exceptions and adding rest using switch case statements.

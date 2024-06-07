@@ -1,0 +1,1 @@
+Solved this question using simple nested loops and purpose of second loop was necessary to not let any element get missed when we found two characters to be equal therefore TC=O(N^2) and SC=O(1)

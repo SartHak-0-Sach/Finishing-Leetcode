@@ -1,0 +1,1 @@
+Solved this by first eliminating any extra zeroes mentioned after the last word and then simply counting the length of last word in O(N) time and O(1) extra space

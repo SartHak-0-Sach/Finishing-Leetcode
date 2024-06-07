@@ -1,0 +1,1 @@
+Solved using unordered map in O(N) TC and O(N) SC, other methods can be using brute force in O(N^2) TC and O(1) SC and by sorting and using double pointer approach from left and right in O(NlogN) TC and O(1) SC.

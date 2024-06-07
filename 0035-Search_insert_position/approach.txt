@@ -1,0 +1,1 @@
+I solved this question by implementing simple binary search algorithm to find the index where element is and if not present at the index then end will surpass value of start and will give the index-1 of where element was supposed to be in O(logN) TC and O(1) SC

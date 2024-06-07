@@ -1,0 +1,1 @@
+Solved question using simple math operation of replicating the number the other way around and equating in O(N) and O(1) complexities.

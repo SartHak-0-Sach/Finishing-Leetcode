@@ -1,0 +1,1 @@
+Just take the last digit and multiply it with 10 to get reversed number(except for last iteration) and check for overflow or underflow(negative infinite too number)
