@@ -1,0 +1,43 @@
+Substring
+A substring is a contiguous sequence of characters within a string. It can start at any position and end at any position in the string, as long as the sequence is uninterrupted.
+
+Example:
+For the string "abcdef", some substrings are "abc", "cde", "ef", "abcd", etc.
+Note that substrings must be contiguous.
+Prefix
+A prefix is a special type of substring that starts at the beginning of the string and includes any number of characters up to the entire string.
+
+Example:
+For the string "abcdef", some prefixes are "a", "ab", "abc", "abcd", "abcde", and "abcdef".
+Subsequence
+A subsequence is a sequence derived from another string by deleting some or no characters without changing the order of the remaining characters. The characters are not required to be contiguous.
+
+Example:
+For the string "abcdef", some subsequences are "abc", "ace", "bdf", "a", "af", "abcdef", etc.
+Note that unlike substrings, subsequences do not have to be contiguous.
+Summary of Differences
+Substring: A contiguous part of a string.
+
+Example: "abc" is a substring of "abcdef".
+Prefix: A substring that starts at the beginning of a string.
+
+Example: "abc" is a prefix of "abcdef", but "bcd" is not.
+Subsequence: A sequence that can be derived from a string by deleting some characters without changing the order of the remaining characters.
+
+Example: "ace" is a subsequence of "abcdef", but "cae" is not (since it changes the order).
+Visual Example
+Consider the string "abcdef":
+
+Substrings:
+
+"abc", "bcd", "cde", "def", "abcd", etc.
+Prefixes:
+
+"a", "ab", "abc", "abcd", "abcde", "abcdef"
+Subsequences:
+
+"a", "b", "ab", "ace", "bdf", "acf", "abcdef", etc.
+
+This is the difference between substring prefix and subsequence
+
+Solved this question in O(N^2) TC by taking a common prefix between strs[0] and strs[1] and then subsequently comparing it with all other strings to reduce it and return final result at end in O(1) SC. 

@@ -1,0 +1,62 @@
+Problem Breakdown
+The task is to implement a method read that reads up to n characters from a file using a helper method read4. The read4 method reads up to 4 characters at a time and stores them in a buffer. We need to call read4 as many times as necessary to read up to n characters into the provided buffer buf.
+
+Approach
+Initialize Counters: Start with a counter to track the number of characters read so far.
+Read in Chunks: Use a loop to call read4 repeatedly until we've read n characters or there's no more data to read.
+Temporary Buffer: Each call to read4 fills a temporary buffer (let's call it cache) with up to 4 characters.
+Copy Data: Copy characters from cache to the destination buffer buf, keeping track of how many characters have been read.
+Stop Conditions: The loop stops when either we've read n characters or read4 returns fewer than 4 characters, indicating the end of the file.
+Return Result: Return the total number of characters read.
+Complexity Analysis
+Time Complexity: The time complexity is 𝑂(𝑛), where 𝑛 is the number of characters we want to read. This is because in the worst case, we will need to call read4 '𝑛' times, and each call involves a constant amount of work.
+Space Complexity: The space complexity is O(1), excluding the input and output buffers, because we are using a fixed-size temporary buffer (cache with a size of 4).
+
+Code Explanation
+Here's the code again with detailed comments to explain each part:
+
+// Forward declaration of the read4 API.
+int read4(char *buf);
+
+class Solution {
+public:
+    /**
+     * @param buf Destination buffer
+     * @param n   Number of characters to read
+     * @return    The number of actual characters read
+     */
+    int read(char *buf, int n) {
+        int ind = 0;  // Initialize the index for the destination buffer
+
+        // Loop until we've read `n` characters or there are no more characters to read
+        while (ind < n) {
+            char cache[4];  // Temporary buffer to hold characters read by read4
+            int cache_size = read4(cache);  // Read up to 4 characters into `cache`
+            if (cache_size == 0) break;  // No more characters to read from file
+
+            // Copy characters from `cache` to `buf`
+            for (int i = 0; i < cache_size && ind < n; ++i) {
+                buf[ind++] = cache[i];
+            }
+        }
+        return ind;  // Return the number of characters actually read
+    }
+};
+
+Detailed Steps:
+
+Forward Declaration of read4: This tells the compiler that read4 is a function that will be provided elsewhere. It's necessary for the compiler to know about read4 before using it in the Solution class.
+
+Class Declaration: We define the Solution class and declare the read method.
+
+Initialize Index: The ind variable keeps track of the number of characters we've read into buf so far.
+
+Reading Loop:
+Temporary Buffer: cache is used to temporarily hold up to 4 characters read by read4.
+Read with read4: cache_size captures the number of characters read in the current call to read4.
+End of File Check: If read4 returns 0, there are no more characters to read, so we break out of the loop.
+Copy Characters: We copy characters from cache to buf until we've either copied all characters from cache or filled buf with n characters.
+
+Return the Count: Finally, we return the total number of characters read into buf.
+
+This approach ensures that we efficiently read up to n characters, using read4 to handle the underlying file reading in chunks of 4 characters, and we handle edge cases like reaching the end of the file or reading fewer characters than requested.

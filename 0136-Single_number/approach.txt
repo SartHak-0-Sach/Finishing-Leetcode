@@ -1,0 +1,1 @@
+Solved this by using the property that xor of two equal numbers is zero in O(N) time and O(1) SC

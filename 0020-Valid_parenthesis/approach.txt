@@ -1,0 +1,1 @@
+We have done this question by simply checking for all cases which can make code fail and if none of these cases occur that means parenthesis is valid in O(N) and O(1) TC and SC.

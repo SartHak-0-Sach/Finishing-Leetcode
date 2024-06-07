@@ -1,0 +1,1 @@
+Solved using simple binary search algo in O(logN) TC and O(1) SC
