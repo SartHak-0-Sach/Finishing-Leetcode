@@ -1,0 +1,1 @@
+Find the total sum and deduct leftSum and current element from that, if we reach a possible pivot index the leftSum(sum of left side) will become equal to the totalSum-leftSum-nums[i] which denotes sum of elements of right side of pivot index thus returning the pivot index
