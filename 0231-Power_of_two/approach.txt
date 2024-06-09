@@ -1,0 +1,1 @@
+Can be either done by finding all power of 2 till 31, dividing by 2, doing right shift operator and counting set bit, or fastest method, if it is able to divide 2^31 then it is perfect power of 2
